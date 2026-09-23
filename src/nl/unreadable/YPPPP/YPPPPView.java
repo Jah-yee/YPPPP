@@ -234,7 +234,7 @@ public class YPPPPView extends JFrame {
 		piGoldBut = new JButton("(Un)Goldlist");
 		piGoldBut.addActionListener(new GoldListHandler());
 		buttonBoxXO.add(piGoldBut);
-		String[] oceans = { "cerulean", "emerald", "merideia", "opal", "jade", "crimson", "ice" };
+		String[] oceans = { "cerulean", "emerald", "meridian", "opal", "jade", "crimson", "ice" };
 		oceanChoice = new JComboBox<String>(oceans);
 		oceanChoice.addActionListener(new OceanChangeHandler(oceanChoice));
 		buttonBoxXO.add(oceanChoice);
