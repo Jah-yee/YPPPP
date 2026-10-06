@@ -15,7 +15,6 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -354,7 +353,7 @@ public class YPPPPView extends JFrame {
 
 	public void setOceanSelection(String ocean) {
 		// Fallback for preferences saved with obsolete ocean names
-		if (ocean == null || !Arrays.asList(oceans).contains(ocean)) {
+		if (ocean == null) {
 			ocean = "cerulean";
 		}
 		oceanChoice.setSelectedItem(ocean);
