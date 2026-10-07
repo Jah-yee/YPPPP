@@ -234,7 +234,7 @@ public class YPPPPView extends JFrame {
 		piGoldBut = new JButton("(Un)Goldlist");
 		piGoldBut.addActionListener(new GoldListHandler());
 		buttonBoxXO.add(piGoldBut);
-		String[] oceans = { "cerulean", "emerald", "merideia", "opal", "jade", "crimson", "ice" };
+		String[] oceans = { "cerulean", "emerald", "meridian", "opal", "jade", "obsidian", "ice" };
 		oceanChoice = new JComboBox<String>(oceans);
 		oceanChoice.addActionListener(new OceanChangeHandler(oceanChoice));
 		buttonBoxXO.add(oceanChoice);
@@ -353,6 +353,10 @@ public class YPPPPView extends JFrame {
 
 	public void setOceanSelection(String ocean) {
 		oceanChoice.setSelectedItem(ocean);
+		// Fallback for preferences saved with obsolete ocean names
+		if (oceanChoice.getSelectedIndex() < 0) {
+			oceanChoice.setSelectedItem("cerulean");
+		}
 	}
 
 	public void setPirateRows(List<PirateRow> rows) {
